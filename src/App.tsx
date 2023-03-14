@@ -1,23 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes";
 
-import AboutPage from "./pages/AboutPage";
-import HomePage from "./pages/HomePage";
+const router = createBrowserRouter(routes);
 
 export default function App() {
-  return (
-    <>
-      <Header />
-
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
